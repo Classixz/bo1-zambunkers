@@ -6,7 +6,7 @@ init()
 {
         level thread maps\mp\gametypes\_hud::init();
         level.failCODJumper = false;
-        
+       		
         header = level createServerFontString("default", 1);
         header setPoint("MIDDLEBOTTOM", "MIDDLEBOTTOM", 0, 0);
         header setText(" ");
@@ -20,9 +20,9 @@ init()
 		level.minigunList = [];
 		level.bunkerList = [];         
         level thread _settings::ZAMBunkerSettings();
-		if(level.workMode == 0) {
-        level thread maps\mp\gametypes\_blocks::doMaps();
-        level thread maps\mp\gametypes\_blocks::createBlocks();
+		if(level.workMode == "testing") {
+			level thread maps\mp\gametypes\_blocks::doMaps();
+			level thread maps\mp\gametypes\_blocks::createBlocks();
 		}
         level.Speed = 0;
         level.scoreInfo = [];
@@ -54,6 +54,7 @@ init()
 	 	setdvar("g_allow_teamchange", 0); 
 		setDvar("scr_showperksonspawn", 0); 
 		setDvar("scr_game_killstreaks", 1); 
+		setDvar("sv_hostname", "^1Z^2A^4M^7 Bunker Mod");
 
         if ( level.teamBased )
         {
@@ -462,7 +463,7 @@ showZAMText()
 		self.zamT setPoint("BOTTOMLEFT", "BOTTOMLEFT", 10, -340);
 		self.zamT.sort = 1001;
 		self.zamT.foreground = false;
-		self.zamT setText("^=ZAMBunkermaker v0.4");
+		self.zamT setText("^=ZAMBunkermaker v0.5");
 }
 
 showCoords()
@@ -478,7 +479,7 @@ showCoords()
 		self.points.sort = 1001;
 		self.points setText("Cades placed: ^="+self.createdBlocks.size+"^7");
 		ClientPrint( self, self.origin + " " + self getPlayerAngles());
-		wait .5;
+		wait .2;
 	}
 }
 onPlayerSpawned()
