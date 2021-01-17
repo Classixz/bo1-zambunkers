@@ -1,5 +1,5 @@
 ## Installation 
-1. Start of by downloading the mod here: https://gitlab.com/Classixz/bo1-zambunkers/repository/archive.zip?ref=Live
+1. Start of by downloading the latest version of the mod here: https://github.com/Classixz/bo1-zambunkers/releases
 
 2. Un-zip the file and place it in your mods directory for Black Ops `..\steamapps\common\Call of Duty Black Ops\mods`. Make sure that it's placed in a folder called `mp_ZAMBunkers`.
 
